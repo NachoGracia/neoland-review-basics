@@ -1,4 +1,4 @@
-//! iteracion 1
+//! iteracion 1--------SOLO MUEVO A NUEVO ARRAY LAS CATEGORIAS
 
 
 /*Dado el siguiente javascript usa forof para recorrer el array de películas,
@@ -14,8 +14,6 @@
     {title: 'El gato con guantes', duration: 111, categories: ['comedia', 'aventura', 'animación']},
 ]
 
-//? sin funcion arrow
-
 const catergorias = [];
 
 
@@ -24,5 +22,4 @@ for (pelis of movies){
    catergorias.push(pelis.categories);
 
 }
-
 console.log("🚀 ~ catergorias:", catergorias)
