@@ -1,4 +1,4 @@
-//! iteracion 1--------SOLO MUEVO A NUEVO ARRAY LAS CATEGORIAS
+//! iteracion 1
 
 
 /*Dado el siguiente javascript usa forof para recorrer el array de películas,
@@ -17,10 +17,14 @@
 const catergorias = [];
 
 
-for (pelis of movies){
+
+for (const pelis of movies){
+
+
+    if (!catergorias.includes(pelis.categories)) {  
 
    catergorias.push(pelis.categories);
-
+    }
 }
 console.log("🚀 ~ catergorias:", catergorias)
 
@@ -61,13 +65,21 @@ const users = [
 
 const favoritos = [];
 
+for (let volumen of users){ 
+    for (let sonidos in volumen.favoritesSounds) // para recorrer los objetos
+
+    favoritos.push(volumen.favoritesSounds[sonidos].volume)
+
+}   
+console.log("🚀 ~ favoritos:", favoritos)
+
+const media = favoritos.reduce((acc, num) => acc + num + 0
+) / 2;
+console.log("🚀 ~ media:", media)
 
 
-for (volumen of users){ 
 
 
-
-}
 
 //! iteracion 3-------------------FALTA
 
@@ -104,11 +116,8 @@ const findArrayIndex = (array, text) => {
 
 
 
-const hola = "shfñdsfh"
-console.log(hola[3])    
 
-
-//! iteracion 5 ------------REALMENTE FUNCIONA COMO FUNCIÓN?
+//! iteracion 5 ------------REALMENTE FUNCIONA COMO FUNCIÓN? NO LE DOY PARAM A LA F Y ME LO HACE IGUAL
 
 /*Crea una función llamada rollDice() que reciba como parametro el numero de caras 
 que queramos que tenga el dado que deberá silumar el codigo dentro de la función.
@@ -123,7 +132,7 @@ que queramos que tenga el dado que deberá silumar el codigo dentro de la funci�
    }
 
    
-   const tirarDados = rollDice(3)
+   const tirarDados = rollDice()
    console.log("🚀 ~ tirarDados:", tirarDados)
    
    
