@@ -139,7 +139,7 @@ for (let gente of users1) {
 
 console.log("🚀 ~ sonidosFavoritos:", sonidosFavoritos);
 
-//! iteracion 4-------------------------REVISAR
+//! iteracion 4
 
 /*Crea una función llamada `findArrayIndex` que reciba como parametros un array de textos
  y un texto y devuelve la posición del array cuando el valor del array sea igual al valor del texto 
@@ -152,16 +152,18 @@ const longitudArray = (array) => array.length;
 //console.log(longitudArray(bichos));
 Longitud = 4;
 
-const textoComparar = "hola";
+const textoComparar = "Ajolote";
 
 const findArrayIndex = (array, texto) => {
-  if (array.length === texto.length) {
-    return array[texto.length];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === texto) {
+      return i;
+    }
   }
 };
 
-const resultado = findArrayIndex(bichos, textoComparar);
-console.log("🚀 ~ resultado:", resultado);
+const resultadoComparar = findArrayIndex(bichos, textoComparar);
+console.log(`La posición dentro del array corresponde a ${resultadoComparar}`);
 
 //! iteracion 5 ------------REALMENTE FUNCIONA COMO FUNCIÓN? NO LE DOY PARAM A LA F Y ME LO HACE IGUAL
 
@@ -172,8 +174,8 @@ que queramos que tenga el dado que deberá silumar el codigo dentro de la funci�
    busca información sobre la función de javascript Math.random();*/
 
 const rollDice = (caras) => {
-  return Math.floor(Math.random(caras) * (6 - 1) + 1);
+  return Math.floor(Math.random() * caras);
 };
 
-const tirarDados = rollDice();
+const tirarDados = rollDice(6);
 console.log("🚀 ~ tirarDados:", tirarDados);
