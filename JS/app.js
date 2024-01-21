@@ -182,7 +182,7 @@ que queramos que tenga el dado que deberá silumar el codigo dentro de la funci�
    busca información sobre la función de javascript Math.random();*/
 
 const rollDice = (caras) => {
-  return Math.floor(Math.random() * caras);
+  return Math.floor(Math.random() * caras) + 1;
 };
 
 const tirarDados = rollDice(6);
