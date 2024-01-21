@@ -126,18 +126,26 @@ const users1 = [
   },
 ];
 
-const sonidosFavoritos = [];
+let sonidosFavoritos = {};
 
 for (let gente of users1) {
   //console.log("🚀 ~ gente:", gente);
   for (let sonidos in gente.favoritesSounds) {
     //console.log("🚀 ~ sonidos:", sonidos);
-
-    sonidosFavoritos.push(sonidos);
+    if (!sonidosFavoritos.hasOwnProperty(sonidos)) {
+      sonidosFavoritos[sonidos] = 0;
+    }
+    sonidosFavoritos[sonidos]++;
   }
 }
 
 console.log("🚀 ~ sonidosFavoritos:", sonidosFavoritos);
+
+for (let tipos in sonidosFavoritos) {
+  console.log(
+    `Este tipo de sonido: ${tipos}, está ${sonidosFavoritos[tipos]} veces`
+  );
+}
 
 //! iteracion 4
 
@@ -165,7 +173,7 @@ const findArrayIndex = (array, texto) => {
 const resultadoComparar = findArrayIndex(bichos, textoComparar);
 console.log(`La posición dentro del array corresponde a ${resultadoComparar}`);
 
-//! iteracion 5 ------------REALMENTE FUNCIONA COMO FUNCIÓN? NO LE DOY PARAM A LA F Y ME LO HACE IGUAL
+//! iteracion 5 ------------REALMENTE FUNCIONA ??
 
 /*Crea una función llamada rollDice() que reciba como parametro el numero de caras 
 que queramos que tenga el dado que deberá silumar el codigo dentro de la función.
